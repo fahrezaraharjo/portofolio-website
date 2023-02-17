@@ -2,6 +2,13 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
+
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
 }
 
 .app__work-filter {
@@ -16,7 +23,12 @@
   .app__work-filter-item {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background-color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 1rem;
+    backdrop-filter: blur(20px);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
     color: #000;
     font-weight: 800;
 
@@ -25,8 +37,8 @@
     margin: 0.5rem;
 
     &:hover {
-      background-color: var(--secondary-color);
-      color: #fff;
+      background-color: #fff;
+      color: #000;
     }
 
     @media screen and (min-width: 2000px) {
@@ -36,7 +48,7 @@
   }
 
   .item-active {
-    background-color: var(--secondary-color);
+    background-color: black;
     color: #fff;
   }
 }
@@ -52,10 +64,13 @@
     flex-direction: column;
 
     margin: 2rem;
-    padding: 1rem;
     border-radius: 0.5rem;
-    background-color: #fff;
-    color: #000;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 1rem;
+    backdrop-filter: blur(20px);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
 
     cursor: pointer;
     transition: all 0.3s ease;
@@ -113,8 +128,11 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    padding: 1rem;
+    backdrop-filter: blur(20px);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
 
     margin: 1rem;
     font-family: var(--font-base);
@@ -150,7 +168,9 @@
 
     padding: 0.5rem 1rem;
     border-radius: 10px;
-    background-color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(20px);
+    background-color: transparent;
     top: -25px;
   }
 }

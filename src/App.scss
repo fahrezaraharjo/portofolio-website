@@ -17,7 +17,30 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
 
+.app__skills-bg {
+  background: url("https://images.hdqwalls.com/wallpapers/neon-light-guy-4k-ve.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app__work-bg {
+  background: url("https://img.freepik.com/premium-photo/flying-through-glowing-rotating-neon-triangles-creating-tunnel_250994-2542.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app__footer-bg {
+  background: url("https://c4.wallpaperflare.com/wallpaper/585/411/761/anime-landscape-neon-colorful-hd-wallpaper-preview.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .app__container {
@@ -58,7 +81,7 @@
 
   p {
     text-transform: uppercase;
-    color: var(--white-color);
+    color: #9D00FF;
     border-bottom: 1px solid var(--black-color);
   }
 }
@@ -71,7 +94,7 @@
   text-transform: capitalize;
 
   span {
-    color: var(--secondary-color);
+    color: #9D00FF;
   }
 
   @media screen and (min-width: 2000px) {
