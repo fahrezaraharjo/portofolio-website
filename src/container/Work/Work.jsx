@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
@@ -11,6 +11,19 @@ const Work = () => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const [selectedWork, setSelectedWork] = useState(null);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedWork) {
+      modalRef.current.focus();
+    }
+  }, [selectedWork]);
+
+
+  const handleWorkSelect = (work) => {
+    setSelectedWork(work);
+  };
 
   useEffect(() => {
     const query = '*[_type == "works"]';
@@ -58,7 +71,7 @@ const Work = () => {
         className="app__work-portfolio"
       >
         {filterWork.map((work, index) => (
-          <div className="app__work-item app__flex" key={index}>
+          <div className="app__work-item app__flex" key={index} onClick={() => handleWorkSelect(work)}>
             <div
               className="app__work-img app__flex"
             >
@@ -103,6 +116,23 @@ const Work = () => {
             </div>
           </div>
         ))}
+        {selectedWork && (
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="app__work-modal"
+            >
+              <div className="app__work-modal-content">
+                <img src={urlFor(selectedWork.imgUrl)} alt={selectedWork.name} ref={modalRef} tabIndex="0" />
+                <h3>{selectedWork.title}</h3>
+                <p>{selectedWork.description}</p>
+                <button onClick={() => setSelectedWork(null)}>Close</button>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        )}
       </motion.div>
     </>
   );
